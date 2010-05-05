@@ -1,3 +1,8 @@
+PROFILE_PATH="${HOME}/.profile.d"
+PLATFORM=`uname`
+
+export PATH=$PATH:$PROFILE_PATH/bin
+
 load_conf() {
   for conf in "$1"/*.conf; do
     [ -e "${conf}" ] && source "${conf}"
@@ -5,11 +10,7 @@ load_conf() {
   return 0
 }
 
-PROFILE_PATH="${HOME}/.profile.d"
-PLATFORM=`uname`
-
 load_conf "${PROFILE_PATH}"
 load_conf "${PROFILE_PATH}/${USER}"
 load_conf "${PROFILE_PATH}/${PLATFORM}"
 load_conf "${PROFILE_PATH}/${USER}/${PLATFORM}"
-

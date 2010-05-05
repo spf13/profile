@@ -1,19 +1,39 @@
 h1. My Bash Profile
 
-This is the profile that I'm now using across a number of machines that I administer.  Most of the tricks I use are fairly general and could be reused by anyone.
+This is Steve Francia's fork of Mat Schaffer's profile.
+
+h2. Features
+
+* Reactive prompt - includes date and exit code of last command and git branch.
+* Tab completion for Git and Subversion
+* Tab completion for Rake, Maven 2 and Ant
+* Tab completion for ssh hosts on OS X.
+* Git aliases
+* 'safeedit' function that makes a timestamped backup copy of a file before editing
+* Basic java set up on solaris and Darwin
+* Maven memory settings
+* 'profile_push' function for pushing these files out to other servers
+* 'link_dotfiles' command that will create symlinks for all the files listed in the dotfiles directory
+* Auto setup of .foward file on Linux and Solaris
+* Integration with "CDArgs":http://www.skamphausen.de/cgi-bin/ska/CDargs
+* "Autojump":http://wiki.github.com/joelthelion/autojump/
+
+h3. Enhancements
+* Bundling a bin directory so that autojump, etc work out of the box. 
+* Tab completion for "git flow":http://github.com/nvie/gitflow
 
 h2. What's it look like?
 
 !http://cloud.github.com/downloads/matschaffer/profile/diagram.png(Feature Diagram)!
 
-h2. Usage
+h2. Installation
 
 <pre>
 # Go home
 cd ~
 
 # Clone mine or your own fork
-git clone git://github.com/matschaffer/profile.git .profile.d
+git clone git://github.com/spf13/profile.git .profile.d
 
 # All *.conf files are loaded alphabetically, so this will retain your original settings
 mv .profile .profile.d/z_myoldsettings.conf
@@ -26,7 +46,8 @@ ln -s .profile.d/init .profile
 source .profile
 </pre>
 
-From here you can now put any @*.conf@ in @~/.profile.d@ and it'll get loaded in alphabetical order. You can also put conf files in @~/.profile.d/`uname`@ to get platform-specific configuration or @~/.profile.d/$USER@ to get user-specific configuration. The load order (defined in the @init@ file) is:
+h2. Usage
+Once installed you can now put any @*.conf@ in @~/.profile.d@ and it'll get loaded in alphabetical order. You can also put conf files in @~/.profile.d/`uname`@ to get platform-specific configuration or @~/.profile.d/$USER@ to get user-specific configuration. The load order (defined in the @init@ file) is:
 
 # .profile.d/init
 # .profile.d/<notextile>*</notextile>.conf
@@ -34,21 +55,16 @@ From here you can now put any @*.conf@ in @~/.profile.d@ and it'll get loaded in
 # .profile.d/`uname`/<notextile>*</notextile>.conf
 # .profile.d/$USER/`uname`/<notextile>*</notextile>.conf
 
-h2. Features
+h3. Additional Installation
 
-* Reactive prompt - includes date and exit code of last command and git branch.
-* Tab Completion for Git and Subversion
-* Tab completion for Rake, Maven 2 and Ant
-* Tab completion for ssh hosts on OS X.
-* Git aliases
-* 'safeedit' function that makes a timestamped backup copy of a file before editing
-* Basic java set up on solaris and Darwin
-* Maven memory settings
-* 'profile_push' function for pushing these files out to other servers
-* 'link_dotfiles' command that will create symlinks for all the files listed in the dotfiles directory
-* Auto setup of .foward file on Linux and Solaris
-* Integration with "CDArgs":http://www.skamphausen.de/cgi-bin/ska/CDargs
-* "Autojump":http://wiki.github.com/joelthelion/autojump/
+h4. To install AutoJump 
+AutoJump comes ready to use out of the box. If you wish to update it follow the following steps
+1. Goto http://github.com/joelthelion/autojump
+2. Download autojump.
+3. Extract/Create in the following locations.
+  * autojump to /usr/bin
+  * autojump.sh to /etc/profile.d # already done for you ;)
+  * autojump.1 to /usr/share/man/man1
 
 h2. Planned features
 
