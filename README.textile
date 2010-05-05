@@ -18,9 +18,13 @@ h2. Features
 * Integration with "CDArgs":http://www.skamphausen.de/cgi-bin/ska/CDargs
 * "Autojump":http://wiki.github.com/joelthelion/autojump/
 
-h3. Enhancements
+h3. SPF13 Enhancements
 * Bundling a bin directory so that autojump, etc work out of the box. 
 * Tab completion for "git flow":http://github.com/nvie/gitflow
+* Extract (xt: extract all common compressions)
+* A better du (duf: du ordered by size)
+* Common bash aliases
+* Separate aliases for Linux and OS X
 
 h2. What's it look like?
 
