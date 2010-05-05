@@ -66,6 +66,20 @@ AutoJump comes ready to use out of the box. If you wish to update it follow the 
   * autojump.sh to /etc/profile.d # already done for you ;)
   * autojump.1 to /usr/share/man/man1
 
+h4. To install CDargs
+Profile contains support for cdargs, but requires the binary to be installed. It may already be on your system, but here are some basic directions if you need to install it.
+1. Goto http://www.skamphausen.de/cgi-bin/ska/CDargs
+2. Download the latest tarball and Extract
+3. Run the following
+<pre>
+	$ configure
+	$ make
+
+	then become root and do:
+
+	# make install-strip
+</pre>
+
 h2. Planned features
 
 * Tab completion for ssh hosts in Solaris/Ubuntu
