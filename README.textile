@@ -19,6 +19,7 @@ h2. Features
 * "Autojump":http://wiki.github.com/joelthelion/autojump/
 
 h3. SPF13 Enhancements
+
 * Bundling a bin directory so that autojump, etc work out of the box. 
 * Tab completion for "git flow":http://github.com/nvie/gitflow
 * Extract (xt: extract all common compressions)
@@ -51,6 +52,7 @@ source .profile
 </pre>
 
 h2. Usage
+
 Once installed you can now put any @*.conf@ in @~/.profile.d@ and it'll get loaded in alphabetical order. You can also put conf files in @~/.profile.d/`uname`@ to get platform-specific configuration or @~/.profile.d/$USER@ to get user-specific configuration. The load order (defined in the @init@ file) is:
 
 # .profile.d/init
@@ -62,6 +64,7 @@ Once installed you can now put any @*.conf@ in @~/.profile.d@ and it'll get load
 h3. Additional Installation
 
 h4. To install AutoJump 
+
 AutoJump comes ready to use out of the box. If you wish to update it follow the following steps
 1. Goto http://github.com/joelthelion/autojump
 2. Download autojump.
@@ -71,6 +74,7 @@ AutoJump comes ready to use out of the box. If you wish to update it follow the 
   * autojump.1 to /usr/share/man/man1
 
 h4. To install CDargs
+
 Profile contains support for cdargs, but requires the binary to be installed. It may already be on your system, but here are some basic directions if you need to install it.
 1. Goto http://www.skamphausen.de/cgi-bin/ska/CDargs
 2. Download the latest tarball and Extract
