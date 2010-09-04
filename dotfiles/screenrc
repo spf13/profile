@@ -1,19 +1,11 @@
-escape ^]a
-
-#bell_msg '^GBell in window %n'
-
-#width 80
-#height 24
-defscrollback 1000000
-
-#shell -/bin/bash
-
-#screen -t editor
-#screen -t shell
-#screen -t other
-#select 1
-#select 0
-
-startup_message off
+vbell off
+escape ``
+autodetach on
+altscreen on
+defflow auto
+defscrollback 5000
+screen -t bash 1
+#change the hardstatus settings to give an window list at the bottom of the
+#screen, with the time and date and with the current window highlighted
 hardstatus alwayslastline
-hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR} (%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}] %{=b C}[ %m/%d %c ]%{W}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
