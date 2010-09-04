@@ -1,13 +1,27 @@
-[user]
-	name = Mat Schaffer
-	email = mat.schaffer@gmail.com
 [alias]
 	co = checkout
 	ci = commit
+    cm = commit -m
 	st = status
 	pu = push
 	pl = pull
-  pub = "!f() { git push ${1:-origin} `git symbolic-ref HEAD`; }; f"
+    pub = "!f() { git push ${1:-origin} `git symbolic-ref HEAD`; }; f"
+    br = branch
+    a = add 
+    df = diff
+    lg = log -p
+    who = shortlog -s --
+    pu = push origin master
+    up = pull origin master
+    undo = reset --soft HEAD^
+    last = cat-file commit HEAD
+    changes=diff --name-status -r
+    diffstat=diff --stat -r
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    this = !git init && git add . && git commit -m \"initial commit\"
+    alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || [ $# = 1 ] && [ $1 = \"--list\" ] && git config --list | grep \"alias\\.\" | sed \"s/^alias\\.\\([^=]*\\)=\\(.*\\).*/\\1@@@@=>@@@@\\2/\" | sort | column -ts \"@@@@\" && exit 0 || echo \"usage: git alias <new alias> <original command>\\n       git alias --list\" >&2 && exit 1' -"
+    ignore = "!sh -c '([ $# = 2 ] && ([ \"$1\" = \"--local\" ] && echo \"$2\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\" || ([ \"$2\" = \"--local\" ] && echo \"$1\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\"))) || ([ $# = 1 ] && ([ ! -e .gitignore ] && touch .gitignore || echo \"$(cat .gitignore)\" > .gitignore) && echo \"$1\" >> .gitignore) || echo \"usage: git ignore <file>\\n       git ignore --local <file>\" >&2 && exit 1' -"  
 [web]
 	browser = open
 [gui]
@@ -29,6 +43,5 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[github]
-	user = matschaffer
-	token = be13b7d9191d854c7185ad0a5ccd68d6
+[merge]
+    tool = vimdiff                                                                                               
